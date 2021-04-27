@@ -12,18 +12,23 @@ void readFile()
 
 int main()
 {
-    readFile();
-    matrix a = matrix(2, 2), b = matrix(3, 3);
-    for (int i = 0; i < 2; i++)
-    {
-        for (int j = 0; j < 2; j++)
-        {
-            a[i][j] = 1;
-            b[i][j] = 1;
-        }
-    }
+    // readFile();
+    matrix matA = matrix(2, 2), matB = matrix(2, 2);
+    matA[0][0] = 1;
+    matA[0][1] = 2;
+    matA[0][2] = 3;
+    matA[1][0] = 4;
+    matA[1][1] = 5;
+    matA[1][2] = 6;
 
-    matrix res = a.naiveMultiplication(b);
+    matB[0][0] = 7;
+    matB[0][1] = 8;
+    matB[1][0] = 9;
+    matB[1][1] = 10;
+    matB[2][0] = 11;
+    matB[2][1] = 12;
+
+    matrix res = matA.strassenMultiplication(matB);
     res.print();
     return 0;
 }
